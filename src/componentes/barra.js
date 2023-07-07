@@ -38,7 +38,8 @@ export default function Barra({actualizarListado, actualizarNoti}) {
                         />
                         <div className="input-group-append">
                             <button className="btn btn-primary" type="button">
-                                <FontAwesomeIcon className="btn btn-primary" type="button" icon={faSearch} />                                </button>
+                                <FontAwesomeIcon className="btn btn-primary" type="button" icon={faSearch} />                               
+                                 </button>
                         </div>
                     </div>
                 </form>

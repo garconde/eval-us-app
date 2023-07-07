@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Modal, Form, Button } from 'react-bootstrap';
 import deleteData from '../api/eliminar';
-import fetchData from '../api/listar';
+import listarDatos from '../api/listar';
 import { act } from 'react-dom/test-utils';
 
 export default function Tarjeta({ soft, actualizarList, actNotif }) {
@@ -50,7 +50,7 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
   }
 
   const fetchDataFromAPI = async () => {
-    const data = await fetchData();
+    const data = await listarDatos();
     if (data) {
       const datar = data.reverse();
       actualizarList(datar);
@@ -62,13 +62,18 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
   const manejarEliminacion = async (id) => {
 
     try {
-      const dataToDelete = { id_soft: id };
-      await deleteData(dataToDelete);
-      console.log("Eliminación exitosa");
+
+      //console.log(dataToDelete);
+
+      await deleteData(id);
+
+      //console.log("Eliminación exitosa");
       fetchDataFromAPI();
+
       handleToast(true, "Eliminación exitosa", "success");
+
     } catch (error) {
-      console.log("Petición fallida:", error.message);
+      //console.log("Petición fallida:", error.message);
       handleToast(true, "Eliminación fallida", "danger");
     }
   };
@@ -115,11 +120,11 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
         <div className="card-content">
 
           <p className="card-text">
-            Eficiencia: {soft.eficiencia > -1 ? soft.eficiencia : "No evaluada"}
+            Eficacia: {soft.eficacia > -1 ? soft.eficacia + "%" : "No evaluada"}
             <br />
-            Eficacia: {soft.eficacia > -1 ? soft.eficacia : "No evaluada"}
+            Eficiencia: {soft.eficiencia > -1 ? soft.eficiencia + "%" : "No evaluada"}
             <br />
-            Satisfacción: {soft.satisfaccion > -1 ? soft.satisfaccion : "No evaluada"}
+            Satisfacción: {soft.satisfaccion > -1 ? soft.satisfaccion + "%" : "No evaluada"}
             <br />
           </p>
         </div>
@@ -139,23 +144,38 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
         {/* Usar Cardbody, Cartitle, Cardtext, Cardfooter, Cardheader */}
 
         <div className='text-center mt-3'>
-          <button
+          {/* <button
             className="btn btn-sm btn-primary mr-2"
-            onClick={() => manejarEdicion(soft.id)}>
+            onClick={() => manejarEdicion(soft.id_soft)}>
             <FontAwesomeIcon icon={faEdit} />
-          </button>
+          </button> */}
 
           {/*<Link to={{ pathname: `/detalles/${soft.id}`, state: { background: location }}} className="btn btn-sm btn-primary mt-3 ml-2">
             <FontAwesomeIcon icon={faEdit} />
           </Link>*/}
 
+          <a className="btn btn-primary btn-icon-split mr-2"
+            onClick={() => manejarEdicion(soft.id_soft)}
+          >
+            <span className="icon text-white-10">
+              <FontAwesomeIcon icon={faEdit} />
+            </span>
+            <span className="text">Detalles</span>
+          </a>
 
+          <a className="btn btn-secondary btn-icon-split hover-red mr-2"
+            onClick={handleMostrar}
+          >
+            <span className="icon text-white-10">
+              <FontAwesomeIcon icon={faTrash} />
+            </span>
+          </a>
 
-          <button
+          {/* <button
             className="btn btn-sm btn-danger mr-2"
             onClick={handleMostrar}>
             <FontAwesomeIcon icon={faTrash} />
-          </button>
+          </button> */}
 
           <Modal show={mostrar} onHide={handleClose}>
             <Modal.Header closeButton>
@@ -168,7 +188,7 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
               <Button variant="secondary" onClick={handleClose}>
                 Cerrar
               </Button>
-              <Button variant="danger" onClick={() => manejarEliminacion(soft.id)}>
+              <Button variant="danger" onClick={() => manejarEliminacion(soft.id_soft)}>
                 Eliminar
               </Button>
             </Modal.Footer>

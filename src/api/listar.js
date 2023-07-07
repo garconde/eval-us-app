@@ -1,7 +1,7 @@
 import axios from 'axios';
 import servidorURL from '../config';
 
-const fetchData = async () => {
+const listarDatos = async () => {
   try {
     const response = await axios.get(`${servidorURL}/listar`);
     return response.data;
@@ -11,4 +11,4 @@ const fetchData = async () => {
   }
 };
 
-export default fetchData;
+export default listarDatos;

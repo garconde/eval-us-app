@@ -32,7 +32,6 @@ import servidorURL from '../config';
 import Detalle from '../paginas/Detalle';
 import Cabecera from '../componentes/estaticos/cabecera';
 import Pie from '../componentes/estaticos/pie';
-import fetchData from '../api/listar';
 import Inicio from '../componentes/inicio';
 
 import 'bootstrap/dist/css/bootstrap.min.css';

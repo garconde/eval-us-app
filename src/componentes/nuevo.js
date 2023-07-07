@@ -10,7 +10,7 @@ import Listado from './listado'
 import { Toast } from 'react-bootstrap';
 import { ToastContainer } from 'react-bootstrap';
 import { useEffect } from 'react';
-import fetchData from '../api/listar';
+import listarDatos from '../api/listar';
 import Notificador from './notificador';
 
 export default function Nuevo({ actualizarList, actualizarNotif }) {
@@ -58,7 +58,7 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
 
 
   const fetchDataFromAPI = async () => {
-    const data = await fetchData();
+    const data = await listarDatos();
     if (data) {
       const datar = data.reverse();
       actualizarList(datar);
@@ -107,7 +107,7 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
       axios.post(`${servidorURL}/nuevo_soft`, software)
         .then((response) => {
 
-          console.log(response);
+          //console.log(response);
           setMostrar(false);
           setToastVisible(true);
           estadoNotif = "Software creado correctamente con el nombre: "
@@ -122,7 +122,7 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
 
         })
         .catch((error) => {
-          console.error(error);
+          //console.error(error);
           setMostrar(false);
           //setToastVisible(true);
           estadoNotif = "Error al crear el software";
@@ -132,7 +132,7 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
 
         });
     } catch (error) {
-      console.error(error);
+      //console.error(error);
       setMostrar(false);
       //setToastVisible(true);
       estadoNotif = "Error al crear el software";
@@ -148,7 +148,7 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
   return (
     <>
       <a onClick={handleMostrar} className="btn btn-info btn-icon-split">
-        <span className="icon text-white-50">
+        <span className="icon text-white-10">
           <FontAwesomeIcon icon={faCirclePlus} />
         </span>
         <span className="text">Nuevo</span>

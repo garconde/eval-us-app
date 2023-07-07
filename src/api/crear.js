@@ -1,7 +1,8 @@
 import axios from 'axios';
 import servidorURL from '../config';
 
-const createData = async (data) => {
+const crearDato = async (id) => {
+  const data = { id_soft : id};
   try {
     const response = await axios.post(`${servidorURL}/nuevo_soft`, data)
     .then((response) => {
@@ -17,4 +18,4 @@ const createData = async (data) => {
   }
 };
 
-export default createData;
+export default crearDato;

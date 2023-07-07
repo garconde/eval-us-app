@@ -22,7 +22,7 @@ export default function Notificador(props) {
                     <Toast.Header>
                         <strong className="me-auto">Notificación</strong>
                     </Toast.Header>
-                    <Toast.Body style={{color: "white"}}>{messageToast}</Toast.Body>
+                    <Toast.Body style={{color: "black"}}>{messageToast}</Toast.Body>
                 </Toast>
             </ToastContainer>
         </div>

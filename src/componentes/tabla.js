@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function About(){
+export default function Tabla(){
     return(
         <div>
             {/* <h1>About</h1> */}
@@ -18,7 +18,11 @@ export default function About(){
             <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">b</div>
             <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
           </div>
+
         </div>
+
+        
+
     );
 }
 

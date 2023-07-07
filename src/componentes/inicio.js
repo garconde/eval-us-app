@@ -4,7 +4,7 @@ import { Button, ListGroup } from "react-bootstrap";
 import Listado from "./listado";
 import Pie from "./estaticos/pie";
 import { useEffect, useState } from "react";
-import fetchData from "../api/listar";
+import listarDatos from "../api/listar";
 import Notificador from "./notificador";
 
 /* function ElementoPrueba({ texto }) {
@@ -40,7 +40,7 @@ export default function Inicio() {
 
     useEffect(() => {
         const fetchDataFromAPI = async () => {
-            const data = await fetchData();
+            const data = await listarDatos();
             if (data) {
                 const datar = data.reverse();
                 setlista(datar);
