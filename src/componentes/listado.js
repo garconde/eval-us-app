@@ -1,10 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Tarjeta from '../componentes/tarjeta';
-import Barra from './barra';
-import Pie from '../componentes/estaticos/pie';
-import Nuevo from './nuevo';
-import { useState } from 'react';
-import { propTypes } from 'react-bootstrap/esm/Image';
 
 export default function Listado(props) {
   const { lista, actListado, actNoti } = props;

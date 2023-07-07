@@ -1,15 +1,11 @@
-import React from 'react';
-import '../estilos/tarjeta.css';
-import servidorURL from '../config';
-import axios from 'axios';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import { Modal, Form, Button } from 'react-bootstrap';
 import deleteData from '../api/eliminar';
 import listarDatos from '../api/listar';
-import { act } from 'react-dom/test-utils';
+import '../estilos/tarjeta.css';
 
 export default function Tarjeta({ soft, actualizarList, actNotif }) {
 

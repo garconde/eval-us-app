@@ -1,17 +1,12 @@
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import axios from 'axios';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import { faAdd, faCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
-import servidorURL from '../config';
-import Listado from './listado'
-import { Toast } from 'react-bootstrap';
-import { ToastContainer } from 'react-bootstrap';
-import { useEffect } from 'react';
 import listarDatos from '../api/listar';
-import Notificador from './notificador';
+import servidorURL from '../config';
 
 export default function Nuevo({ actualizarList, actualizarNotif }) {
   const [mostrar, setMostrar] = useState(false);
@@ -19,7 +14,6 @@ export default function Nuevo({ actualizarList, actualizarNotif }) {
   const [version, setVersion] = useState('');
 
   const [toastVisible, setToastVisible] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
 
   //const [lista, setlista] = useState([]);
 

@@ -1,27 +1,20 @@
 
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
+import { faCheckDouble, faComments, faGaugeHigh, faHamburger, faHourglass, faTasks } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Home from '../componentes/contenido_eficacia';
-import About from '../componentes/tabla';
-import TabsInternas from '../componentes/tabs-1';
-import "../css/sb-admin-2.css"
-import "../css/sb-admin-2.min.css"
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import guardarTareas from '../api/guardar_tareas';
+import obtenerSoft from '../api/obtener_soft';
 import Contenido_eficacia from '../componentes/contenido_eficacia';
 import Contenido_eficiencia from '../componentes/contenido_eficiencia';
-import Pie from '../componentes/estaticos/pie';
-import deleteData from '../api/eliminar';
-import fetchData from '../api/listar';
-import guardarTareas from '../api/guardar_tareas';
-import { Button } from 'react-bootstrap';
-import obtenerSoft from '../api/obtener_soft';
-import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGaugeHigh, faTasks, faTimes, faHourglass, faComments, faCheckDouble, faArrowCircleLeft, faHamburger } from '@fortawesome/free-solid-svg-icons';
-import Tabla from '../componentes/tabla';
-import Instrucciones from '../componentes/estaticos/instrucciones';
-import Contenido_sat_puntajes from '../componentes/contenido_sat_puntajes';
 import Contenido_sat_comentarios from '../componentes/contenido_sat_comentarios';
+import Contenido_sat_puntajes from '../componentes/contenido_sat_puntajes';
 import Contenido_usabilidad from '../componentes/contenido_usabilidad';
+import Instrucciones from '../componentes/estaticos/instrucciones';
+import Pie from '../componentes/estaticos/pie';
+import "../css/sb-admin-2.css";
+import "../css/sb-admin-2.min.css";
 
 export default function Detalle({ }) {
 

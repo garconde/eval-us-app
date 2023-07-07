@@ -1,10 +1,8 @@
-import React from "react";
-import Barra from "./barra";
-import { Button, ListGroup } from "react-bootstrap";
-import Listado from "./listado";
-import Pie from "./estaticos/pie";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import listarDatos from "../api/listar";
+import Barra from "./barra";
+import Pie from "./estaticos/pie";
+import Listado from "./listado";
 import Notificador from "./notificador";
 
 /* function ElementoPrueba({ texto }) {
