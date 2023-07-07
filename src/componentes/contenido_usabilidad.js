@@ -1,10 +1,9 @@
 import React from "react";
-import Graficador from "./graficador";
 import obtenerSoft from "../api/obtener_soft";
 import { useEffect } from "react";
 import Graficador_usabilidad from "./graficador-usabilidad";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faCheckDouble, faHandsClapping, faHourglass, faTasks } from "@fortawesome/free-solid-svg-icons";
+import { faCheckDouble, faHandsClapping, faHourglass, faTasks } from "@fortawesome/free-solid-svg-icons";
 
 export default function Contenido_usabilidad({ idSof }) {
     const [soft, setSoft] = React.useState([]);

@@ -1,5 +1,5 @@
 import React from "react";
-import { Area, BarChart, ComposedChart, ResponsiveContainer } from "recharts";
+import { Area, ComposedChart, ResponsiveContainer } from "recharts";
 import { CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from "recharts";
 
 export default function Graficador_usabilidad({ dataGrafica, variablex, variabley, variablez, color }) {

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import servidorURL from '../config';
 
 const guardarComentarios = async (id, tabla) => {

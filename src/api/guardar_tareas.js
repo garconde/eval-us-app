@@ -1,4 +1,3 @@
-import axios from 'axios';
 import servidorURL from '../config';
 
 const guardarTareas = async (id, tabla) => {
