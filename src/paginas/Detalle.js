@@ -15,6 +15,7 @@ import Contenido_usabilidad from '../componentes/contenido_usabilidad';
 import Pie from '../componentes/estaticos/pie';
 import "../css/sb-admin-2.css";
 import "../css/sb-admin-2.min.css";
+import Instrucciones from '../componentes/estaticos/instrucciones';
 
 export default function Detalle({ }) {
 
@@ -295,7 +296,7 @@ export default function Detalle({ }) {
           {/* {console.log("___________id_soft||||||||||||||||", id)} */}
 
           <div>
-            {/* {tabSelected === 0 && <Instrucciones />} */}
+            {tabSelected === 0 && <Instrucciones />}
             {tabSelected === 1 && <Contenido_eficacia idSof={id} />}
             {tabSelected === 2 && <Contenido_eficiencia idSof={id} />}
             {tabSelected === 3 && <Contenido_sat_puntajes idSof={id} />}
