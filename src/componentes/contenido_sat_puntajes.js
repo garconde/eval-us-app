@@ -19,10 +19,10 @@ var userMax = 0;
 var userMin = 0;
 var userMaxIndex = 0;
 var userMinIndex = 0;
-var tareaMax = 0;
-var tareaMin = 0;
-var tareaMaxIndex = 0;
-var tareaMinIndex = 0;
+var preguntaMax = 0;
+var preguntaMin = 0;
+var preguntaMaxIndex = 0;
+var preguntaMinIndex = 0;
 
 
 
@@ -770,7 +770,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
                                                                 <div className="" />
                                                                 <Graficador
                                                                     dataGrafica={formatDataGraficaPuntajes(tabla)}
-                                                                    variablex={"Tarea"}
+                                                                    variablex={"Pregunta"}
                                                                     variabley={"Satisfaccion"}
                                                                     color={"fill"}
                                                                 />
@@ -806,8 +806,8 @@ export default function Contenido_sat_puntajes({ idSof }) {
                                                     <p></p>
                                                     <p>El usuario con mayor satisfacción es el <b>Usuario {userMaxIndex + 1}</b> con un {userMax}%</p>
                                                     <p>El usuario con menor satisfacción es el <b>Usuario {userMinIndex + 1}</b> con un {userMin}%</p>
-                                                    <p>La tarea en que se obtuvo más satisfacción es la <b>Tarea {tareaMaxIndex + 1}</b> con un {tareaMax}%</p>
-                                                    <p>La tarea en que se obtuvo menos satisfacción es la <b>Tarea {tareaMinIndex + 1}</b> con un {tareaMin}%</p>
+                                                    <p>La pregunta en que se obtuvo más satisfacción es la <b>Pregunta {preguntaMaxIndex + 1}</b> con un {preguntaMax}%</p>
+                                                    <p>La pregunta en que se obtuvo menos satisfacción es la <b>Pregunta {preguntaMinIndex + 1}</b> con un {preguntaMin}%</p>
                                                 </div>
 
                                             </div>
@@ -923,14 +923,14 @@ const formatDataGraficaPuntajes = (dat) => {
         averages.push(roundedAverage);
     }
 
-    tareaMax = Math.max(...averages);
-    tareaMin = Math.min(...averages);
-    tareaMaxIndex = averages.indexOf(tareaMax);
-    tareaMinIndex = averages.indexOf(tareaMin);
+    preguntaMax = Math.max(...averages);
+    preguntaMin = Math.min(...averages);
+    preguntaMaxIndex = averages.indexOf(preguntaMax);
+    preguntaMinIndex = averages.indexOf(preguntaMin);
 
     const dataGrafica = averages.map((satisfaccion, index) => {
         return {
-            Tarea: `Tarea ${index + 1}`,
+            Pregunta: `Pregunta ${index + 1}`,
             Satisfaccion: satisfaccion,
             fill: getColor(dat)
         };
