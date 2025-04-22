@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# 🧪 Evaluador de Usabilidad - Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este es el cliente web del sistema **Evaluador de Usabilidad**, una herramienta diseñada para evaluar y analizar la usabilidad de aplicaciones de software mediante métricas como eficacia, eficiencia y satisfacción del usuario.
 
-## Available Scripts
+Este proyecto trabaja en conjunto con la API [eval-us-api](https://github.com/garconde/eval-us-api), la cual provee la funcionalidad del backend.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Tecnologías utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+| Tecnología             | Descripción                                           |
+|------------------------|-------------------------------------------------------|
+| **React**              | Librería principal para construir la interfaz de usuario. |
+| **Axios**              | Cliente HTTP para comunicación con la API.            |
+| **React Router**       | Manejo de rutas y navegación entre vistas.            |
+| **JavaScript (ES6+)**  | Lenguaje base del proyecto.                           |
+| **HTML5 + CSS3**       | Maquetación y estilos.                                |
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## ✅ Características
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Gestión de software**: Agregar, listar y eliminar software para evaluación.
+- **Evaluación de usabilidad**: Evaluar eficacia, eficiencia, satisfacción y usabilidad general.
+- **Gráficos interactivos**: Visualización de datos mediante gráficos dinámicos.
+- **Interfaz responsiva**: Estilos basados en Bootstrap para una experiencia de usuario consistente.
+- **Conexión con API**: Interacción con un backend para guardar y recuperar datos.
+- **Manejo de errores**: Validaciones y mensajes de error para una mejor experiencia de usuario.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📦 Requisitos
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js**: Asegúrate de tener Node.js instalado en tu máquina. Puedes descargarlo desde [aquí](https://nodejs.org/).
+- **npm**: Viene incluido con Node.js, pero asegúrate de tener la última versión ejecutando `npm install -g npm`.
+- **API Backend**: Asegúrate de tener la API [eval-us-api](https://github.com/garconde/eval-us-app.git) corriendo en tu máquina o en un servidor accesible.
+- **Conexión a Internet**: Para descargar dependencias y acceder a la API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
+## ⚙️ Instalación y ejecución
 
-### `npm run eject`
+1. **Clona este repositorio:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/garconde/eval-us-app.git
+cd eval-us-app
+```
+2. **Instala las dependencias:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm install
+```
+3. **Configura la URL del servidor en `src/config.js`:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+export const serverURL = "http://localhost:5000";
+```
+4. **Inicia la aplicación:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm start
+```
 
-## Learn More
+Esto abrirá la aplicación en http://localhost:3000/ por defecto.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🔗 Repositorio relacionado
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este frontend se comunica con la API:
 
-### Code Splitting
+📦 **eval-us-api**  
+🔗 [https://github.com/garconde/eval-us-api](https://github.com/garconde/eval-us-api)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 📄 Licencia
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Este proyecto está bajo la **Licencia MIT**.  
+Consulta el archivo [LICENSE](./LICENSE) para más detalles.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ✍️ Autor
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**David Garcés Conde**  
+GitHub: [@garconde](https://github.com/garconde)
