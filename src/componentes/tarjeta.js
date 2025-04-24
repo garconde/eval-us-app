@@ -126,7 +126,7 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
         </div>
 
         <br />
-        <p className='card-Text'>Satisfacción</p>
+        <p className='card-Text'>Usabilidad</p>
 
         <div className="progress mt-3">
           <div className={`progress-bar ${progressColor}`} style={{ width: `${soft.usabilidad === -1 ? 0 : soft.usabilidad}%` }}>
