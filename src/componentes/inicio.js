@@ -24,6 +24,7 @@ function Mostrar({ texto }) {
 export default function Inicio() {
 
     const [lista, setlista] = useState([]);
+    const [listaOriginal, setlistaOriginal] = useState([]); 
 
     const [toastShow, setToastShow] = useState(false);
     const [toastMessage, setToastMessage] = useState("");
@@ -41,6 +42,7 @@ export default function Inicio() {
             const data = await listarDatos();
             if (data) {
                 const datar = data.reverse();
+                setlistaOriginal (datar);
                 setlista(datar);
             }
         };
@@ -60,7 +62,7 @@ export default function Inicio() {
 
     return (
         <div>
-            <Barra actualizarListado={setlista} actualizarNoti={handleNoti}/>
+            <Barra listaOriginal={listaOriginal} actualizarListado={setlista} actualizarNoti={handleNoti}/>
             <Listado lista={lista} actListado={setlista} actNoti={handleNoti}/>
             {/* <br />
             <Mostrar texto={textoprueba} />
