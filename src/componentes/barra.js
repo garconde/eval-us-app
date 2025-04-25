@@ -8,25 +8,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Nuevo from "./nuevo";
 import Info from "./estaticos/info";
 
-export default function Barra({ listaOriginal, actualizarListado, actualizarNoti }) {
-    const [busqueda, setBusqueda] = useState("");
+export default function Barra({listaOriginal, actualizarListado, actualizarListaAux, actualizarNoti }) {
+    const [busqueda, setBusqueda] = useState(""); 
 
     const handleChange = (e) => {
         const valor = e.target.value;
         setBusqueda(valor);
 
         if (!valor.trim()) {
-            actualizarListado(listaOriginal);
+            actualizarListaAux(listaOriginal);
             return;
         }
 
         const listaFiltrada = listaOriginal.filter(item =>
             item.nombre.toLowerCase().includes(valor.toLowerCase())
         );
-        actualizarListado(listaFiltrada);
+        actualizarListaAux(listaFiltrada);
     };
 
-    function actualizarListaAux(elementos) {
+    function actualiadorDeLista(elementos) {
+        setBusqueda(""); // Limpiar el campo de búsqueda
         actualizarListado(elementos);
     }
 
@@ -58,7 +59,7 @@ export default function Barra({ listaOriginal, actualizarListado, actualizarNoti
 
                 <ul className="navbar-nav ml-auto">
                     <li className="nav-item">
-                        <Nuevo actualizarList={actualizarListaAux} actualizarNotif={actualizarNotiAux} />
+                        <Nuevo actualizarList={actualiadorDeLista} actualizarNotif={actualizarNotiAux} />
                     </li>
                     <div className="topbar-divider d-none d-sm-block" />
                     <li className="nav-item">

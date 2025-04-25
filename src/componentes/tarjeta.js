@@ -156,7 +156,7 @@ export default function Tarjeta({ soft, actualizarList, actNotif }) {
             <span className="icon text-white-10">
               <FontAwesomeIcon icon={faEdit} />
             </span>
-            <span className="text">Detalles</span>
+            <span className="text">Gestionar</span>
           </a>
 
           <a className="btn btn-secondary btn-icon-split hover-red mr-2"

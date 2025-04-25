@@ -2,7 +2,7 @@ import React from 'react';
 import Tarjeta from '../componentes/tarjeta';
 
 export default function Listado(props) {
-  const { lista, actListado, actNoti } = props;
+  const { lista, filtrar, actListado, actNoti } = props;
 
   const actualizarLista = (nuevaLista) => {
     actListado(nuevaLista);
