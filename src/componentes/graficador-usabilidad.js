@@ -6,7 +6,7 @@ export default function Graficador_usabilidad({ dataGrafica, variablex, variable
 
 
 
-    console.log("data DENTRO: ", dataGrafica);
+    //console.log("data DENTRO: ", dataGrafica);
 
 
     function getColor() {

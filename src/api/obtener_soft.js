@@ -12,7 +12,7 @@ const data = { id_soft : id};
       body: JSON.stringify(data)
     });
 
-    console.log(response);
+    //console.log(response);
 
     // Manejar la respuesta
     if (response.ok) {

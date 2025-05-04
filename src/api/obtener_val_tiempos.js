@@ -12,7 +12,7 @@ const datar = { id_soft : id};
       body: JSON.stringify(datar)
     });
 
-    console.log(response);
+    //console.log(response);
 
     // Manejar la respuesta
     if (response.ok) {

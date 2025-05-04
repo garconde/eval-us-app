@@ -42,22 +42,6 @@ export default function Contenido_eficacia({ idSof }) {
     const [dataGraf, setDataGraf] = useState([]);
     //const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
-
-
-    /* 
-
-    Debo quitar todos los console log.
-
-    Enviarle a la tabla la consulta de la tarea, lista para renderizar, aplica sólo para EFICACIA
-        pues es la primera a mostrar.
-
-    Limpiar y ordenar el código, quitar lo que no se usa y los if innecesarios.
-
-    Validar que el json tareas traiga datos y no sea []
-
-
-    */
-
     useEffect(() => {
         if (idSof != null) {
             const obtenerData = async () => {
@@ -102,7 +86,7 @@ export default function Contenido_eficacia({ idSof }) {
 
             setFileData(file);
 
-            console.log(file);
+            //console.log(file);
 
             cargarTablaDesdeArchivo(file);
 
@@ -121,7 +105,7 @@ export default function Contenido_eficacia({ idSof }) {
 
 
         //const file = fileData;
-        //1console.log(file);
+        //console.log(file);
 
         if (file || file != null) {
             const fileName = file.name.toLowerCase();
@@ -131,10 +115,10 @@ export default function Contenido_eficacia({ idSof }) {
             } else if (fileName.endsWith(".xlsx")) {
                 parseXlsxFile(file);
             } else {
-                console.log("Unsupported file format");
+                console.log("Formato de archivo no soportado");
             }
         } else {
-            console.log("No file chosen");
+            console.log("No se ha seleccionado un archivo");
         }
     };
 
@@ -168,8 +152,8 @@ export default function Contenido_eficacia({ idSof }) {
                     }, 3000);
 
 
-                    console.log("arrayT: ", arrayT);
-                    console.log(result.data);
+                    //console.log("arrayT: ", arrayT);
+                    //console.log(result.data);
                 },
             });
         } catch (error) {
@@ -224,8 +208,8 @@ export default function Contenido_eficacia({ idSof }) {
                 }, 3000);
 
 
-                console.log(arrayT);
-                console.log(jsonData);
+                //console.log(arrayT);
+                //console.log(jsonData);
 
             } catch (error) {
 
@@ -274,16 +258,16 @@ export default function Contenido_eficacia({ idSof }) {
         setNumTareas("#T");
         setNumUsuarios("#U");
 
-        console.log(t);
-        console.log(u);
-        console.log(tablaNueva);
-        console.log("Nuevo submit");
+        //console.log(t);
+        //console.log(u);
+        //console.log(tablaNueva);
+        //console.log("Nuevo submit");
     };
 
 
     const guardarDatos = async () => {
 
-        console.log("TablaAux Antes de guardar", tablaAux);
+        //console.log("TablaAux Antes de guardar", tablaAux);
 
         const tablaTareas = convertirANumeros(tablaAux);
 
@@ -295,12 +279,12 @@ export default function Contenido_eficacia({ idSof }) {
             try {
                 const data = await guardarTareas(idSof, tablaTareas);
                 if (data) {
-                    console.log("Datos guardados correctamente");
+                    //console.log("Datos guardados correctamente");
 
 
                     consultarGraficosBD(idSof);
                     setTabla(tablaAux);
-                    console.log("Tabla AL HABER GUARDADO", tabla);
+                    //console.log("Tabla AL HABER GUARDADO", tabla);
                     //Aquí se debe NOTIFICAR al usuario que se guardó correctamente
                     setShowNotificacion(true);
                     setMensajeNotificacion("Datos guardados correctamente");
@@ -321,13 +305,8 @@ export default function Contenido_eficacia({ idSof }) {
                 }, 3000);
                 console.error('Error al guardar los datos:', error);
             }
-
-
-
-
-
-            console.log("Matriz CORRECTA");
-            console.log(tablaTareas);
+            //console.log("Matriz CORRECTA");
+            //console.log(tablaTareas);
         } else {
 
             //Aquí se debe NOTIFICAR al usuario que la matriz no es válida
@@ -338,7 +317,7 @@ export default function Contenido_eficacia({ idSof }) {
                 setShowNotificacion(false);
             }, 3000);
 
-            console.log("Matriz inválida");
+            //console.log("Matriz inválida");
         }
 
     };
@@ -347,10 +326,8 @@ export default function Contenido_eficacia({ idSof }) {
         try {
             const resp = await obtenerResTareas(idSof);
             if (resp) {
-                console.log("Datos consultados correctamente");
-
-
-                console.log(resp.data);
+                //console.log("Datos consultados correctamente");
+                //console.log(resp.data);
 
                 setDataGraf(resp);
             }
@@ -364,7 +341,7 @@ export default function Contenido_eficacia({ idSof }) {
     function validarMatriz(matriz) {
         // Verificar si algún elemento es una cadena, vacío o nulo
 
-        console.log("MATRIZ: ", matriz);
+        //console.log("MATRIZ: ", matriz);
 
         const tieneAdvertencia = matriz.some(fila =>
             fila.some(elemento =>
@@ -395,7 +372,7 @@ export default function Contenido_eficacia({ idSof }) {
             matrizNumeros.push(filaNumeros);
         }
 
-        console.log("MATRIZ TRANSFORMADA: ", matrizNumeros);
+        //console.log("MATRIZ TRANSFORMADA: ", matrizNumeros);
         return matrizNumeros;
     }
 
@@ -411,7 +388,7 @@ export default function Contenido_eficacia({ idSof }) {
             row.map(({ value }) => value)
         );
 
-        console.log("Datos actualizados: ", newArray);
+        //console.log("Datos actualizados: ", newArray);
 
         setTablaAux(newArray);
 
@@ -950,7 +927,7 @@ const formatDataGraficaTareas = (dat) => {
         };
     });
 
-    console.log("DATA GRAFICA: ", dataGrafica);
+    //console.log("DATA GRAFICA: ", dataGrafica);
 
     return dataGrafica;
 }

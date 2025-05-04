@@ -89,7 +89,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
 
             setFileData(file);
 
-            console.log(file);
+            //console.log(file);
 
             cargarTablaDesdeArchivo(file);
 
@@ -118,10 +118,10 @@ export default function Contenido_sat_puntajes({ idSof }) {
             } else if (fileName.endsWith(".xlsx")) {
                 parseXlsxFile(file);
             } else {
-                console.log("Unsupported file format");
+                console.log("Archivo no válido. Solo se permiten archivos .csv o .xlsx");
             }
         } else {
-            console.log("No file chosen");
+            console.log("No se ha seleccionado ningún archivo.");
         }
     };
 
@@ -155,8 +155,8 @@ export default function Contenido_sat_puntajes({ idSof }) {
                     }, 3000);
 
 
-                    console.log("arrayT: ", arrayT);
-                    console.log(result.data);
+                    //console.log("arrayT: ", arrayT);
+                    //console.log(result.data);
                 },
             });
         } catch (error) {
@@ -211,8 +211,8 @@ export default function Contenido_sat_puntajes({ idSof }) {
                 }, 3000);
 
 
-                console.log(arrayT);
-                console.log(jsonData);
+                //console.log(arrayT);
+                //console.log(jsonData);
 
             } catch (error) {
 
@@ -261,16 +261,16 @@ export default function Contenido_sat_puntajes({ idSof }) {
         setNumPreguntass("#P");
         setNumUsuarios("#U");
 
-        console.log(p);
-        console.log(u);
-        console.log(tablaNueva);
-        console.log("Nuevo submit");
+        //console.log(p);
+        //console.log(u);
+        //console.log(tablaNueva);
+        //console.log("Nuevo submit");
     };
 
 
     const guardarDatos = async () => {
 
-        console.log("TablaAux Antes de guardar", tablaAux);
+        //console.log("TablaAux Antes de guardar", tablaAux);
 
         const tablaPuntajes = convertirANumeros(tablaAux);
 
@@ -282,12 +282,12 @@ export default function Contenido_sat_puntajes({ idSof }) {
             try {
                 const data = await guardarPuntajes(idSof, tablaPuntajes);
                 if (data) {
-                    console.log("Datos guardados correctamente");
+                    //console.log("Datos guardados correctamente");
 
 
                     consultarGraficosBD(idSof);
                     setTabla(tablaAux);
-                    console.log("Tabla AL HABER GUARDADO", tabla);
+                    //console.log("Tabla AL HABER GUARDADO", tabla);
                     //Aquí se debe NOTIFICAR al usuario que se guardó correctamente
                     setShowNotificacion(true);
                     setMensajeNotificacion("Datos guardados correctamente");
@@ -313,8 +313,8 @@ export default function Contenido_sat_puntajes({ idSof }) {
 
 
 
-            console.log("Matriz CORRECTA");
-            console.log(tablaPuntajes);
+            //console.log("Matriz CORRECTA");
+            //console.log(tablaPuntajes);
         } else {
 
             //Aquí se debe NOTIFICAR al usuario que la matriz no es válida
@@ -325,7 +325,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
                 setShowNotificacion(false);
             }, 3000);
 
-            console.log("Matriz inválida");
+            //console.log("Matriz inválida");
         }
 
     };
@@ -334,10 +334,10 @@ export default function Contenido_sat_puntajes({ idSof }) {
         try {
             const resp = await obtenerResPuntajes(idSof);
             if (resp) {
-                console.log("Datos consultados correctamente");
+                //console.log("Datos consultados correctamente");
 
 
-                console.log(resp.data);
+                //console.log(resp.data);
 
                 setDataGraf(resp);
             }
@@ -351,7 +351,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
     function validarMatriz(matriz) {
         // Verificar si algún elemento es una cadena, vacío o nulo
 
-        console.log("MATRIZ: ", matriz);
+        //console.log("MATRIZ: ", matriz);
 
         const tieneAdvertencia = matriz.some(fila =>
             fila.some(elemento =>
@@ -382,7 +382,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
             matrizNumeros.push(filaNumeros);
         }
 
-        console.log("MATRIZ TRANSFORMADA: ", matrizNumeros);
+        //console.log("MATRIZ TRANSFORMADA: ", matrizNumeros);
         return matrizNumeros;
     }
 
@@ -398,7 +398,7 @@ export default function Contenido_sat_puntajes({ idSof }) {
             row.map(({ value }) => value)
         );
 
-        console.log("Datos actualizados: ", newArray);
+        //console.log("Datos actualizados: ", newArray);
 
         setTablaAux(newArray);
 
@@ -936,7 +936,7 @@ const formatDataGraficaPuntajes = (dat) => {
         };
     });
 
-    console.log("DATA GRAFICA: ", dataGrafica);
+    //console.log("DATA GRAFICA: ", dataGrafica);
 
     return dataGrafica;
 }

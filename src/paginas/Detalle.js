@@ -112,7 +112,7 @@ export default function Detalle({ }) {
 
       const resp = await guardarTareas(idn, tablaValores);
 
-      console.log("Guardado exitoso", resp);
+      //console.log("Guardado exitoso", resp);
 
     } catch (error) {
 

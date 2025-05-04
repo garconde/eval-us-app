@@ -6,7 +6,7 @@ export default function Graficador({ dataGrafica, variablex, variabley, color })
 
 
 
-    console.log("data DENTRO: ", dataGrafica);
+    //console.log("data DENTRO: ", dataGrafica);
 
 
     function getColor() {

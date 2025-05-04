@@ -85,7 +85,7 @@ export default function Contenido_sat_comentarios({ idSof }) {
 
             setFileData(file);
 
-            console.log(file);
+            //console.log(file);
 
             cargarTablaDesdeArchivo(file);
 
@@ -104,7 +104,7 @@ export default function Contenido_sat_comentarios({ idSof }) {
 
 
         //const file = fileData;
-        //1console.log(file);
+        //console.log(file);
 
         if (file || file != null) {
             const fileName = file.name.toLowerCase();
@@ -114,10 +114,10 @@ export default function Contenido_sat_comentarios({ idSof }) {
             } else if (fileName.endsWith(".xlsx")) {
                 parseXlsxFile(file);
             } else {
-                console.log("Unsupported file format");
+                console.log("Archivo no válido. Solo se permiten archivos .csv o .xlsx");
             }
         } else {
-            console.log("No file chosen");
+            console.log("No se ha seleccionado ningún archivo.");
         }
     };
 
@@ -151,8 +151,8 @@ export default function Contenido_sat_comentarios({ idSof }) {
                     }, 3000);
 
 
-                    console.log("arrayT: ", arrayT);
-                    console.log(result.data);
+                    //console.log("arrayT: ", arrayT);
+                    //console.log(result.data);
                 },
             });
         } catch (error) {
@@ -207,8 +207,8 @@ export default function Contenido_sat_comentarios({ idSof }) {
                 }, 3000);
 
 
-                console.log(arrayT);
-                console.log(jsonData);
+                //console.log(arrayT);
+                //console.log(jsonData);
 
             } catch (error) {
 
@@ -257,16 +257,16 @@ export default function Contenido_sat_comentarios({ idSof }) {
         setNumPreguntass("#P");
         setNumUsuarios("#U");
 
-        console.log(p);
-        console.log(u);
-        console.log(tablaNueva);
-        console.log("Nuevo submit");
+        //console.log(p);
+        //console.log(u);
+        //console.log(tablaNueva);
+        //console.log("Nuevo submit");
     };
 
 
     const guardarDatos = async () => {
 
-        console.log("TablaAux Antes de guardar", tablaAux);
+        //console.log("TablaAux Antes de guardar", tablaAux);
 
         const tablaComentarios = convertirANumerosPesos(tablaAux);
 
@@ -278,12 +278,12 @@ export default function Contenido_sat_comentarios({ idSof }) {
             try {
                 const data = await guardarComentarios(idSof, tablaComentarios);
                 if (data) {
-                    console.log("Datos guardados correctamente");
+                    //console.log("Datos guardados correctamente");
 
 
                     consultarGraficosBD(idSof);
                     setTabla(tablaAux);
-                    console.log("Tabla AL HABER GUARDADO", tabla);
+                    //console.log("Tabla AL HABER GUARDADO", tabla);
                     //Aquí se debe NOTIFICAR al usuario que se guardó correctamente
                     setShowNotificacion(true);
                     setMensajeNotificacion("Datos guardados correctamente");
@@ -309,8 +309,8 @@ export default function Contenido_sat_comentarios({ idSof }) {
 
 
 
-            console.log("Matriz CORRECTA");
-            console.log(tablaComentarios);
+            //console.log("Matriz CORRECTA");
+            //console.log(tablaComentarios);
         } else {
 
             //Aquí se debe NOTIFICAR al usuario que la matriz no es válida
@@ -321,7 +321,7 @@ export default function Contenido_sat_comentarios({ idSof }) {
                 setShowNotificacion(false);
             }, 3000);
 
-            console.log("Matriz inválida");
+            //console.log("Matriz inválida");
         }
 
     };
@@ -335,7 +335,7 @@ export default function Contenido_sat_comentarios({ idSof }) {
 
         matriz[0] = numeros; // Reemplazar la primera fila en la matriz con los números convertidos
 
-        console.log("MATRIZ TRANSFORMADA: ", matriz);
+        //console.log("MATRIZ TRANSFORMADA: ", matriz);
 
         return matriz;
     }
@@ -345,10 +345,10 @@ export default function Contenido_sat_comentarios({ idSof }) {
             const resp = await obtenerResComentarios(idSof);
             if (resp) {
 
-                console.log("Datos consultados correctamente");
+                //console.log("Datos consultados correctamente");
 
 
-                console.log(resp.data);
+                //console.log(resp.data);
 
                 setDataGraf(resp);
             }
@@ -387,7 +387,7 @@ export default function Contenido_sat_comentarios({ idSof }) {
             row.map(({ value }) => value)
         );
 
-        console.log("Datos actualizados: ", newArray);
+        //console.log("Datos actualizados: ", newArray);
 
         setTablaAux(newArray);
 
