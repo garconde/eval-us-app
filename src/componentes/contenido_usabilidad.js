@@ -203,7 +203,7 @@ export default function Contenido_usabilidad({ idSof }) {
 
                                     {/* Card Header  */}
                                     <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 className="m-0 font-weight-bold text-primary">Eficacia por usuarios</h6>
+                                        <h6 className="m-0 font-weight-bold text-primary">Usabilidad general y atributos</h6>
                                     </div>
 
                                     {/* Card Body */}
