@@ -4,6 +4,14 @@ Este es el cliente web del sistema **Evaluador de Usabilidad**, una herramienta 
 
 Este proyecto trabaja en conjunto con la API [eval-us-api](https://github.com/garconde/eval-us-api), la cual provee la funcionalidad del backend.
 
+## 🔗 Repositorios relacionados
+
+📦 **API Backend (eval-us-api)**  
+🔗 [https://github.com/garconde/eval-us-api](https://github.com/garconde/eval-us-api)
+
+📄 **Documentación, informes y anexos del proyecto**  
+🔗 [https://github.com/garconde/trabajo-grado-2025](https://github.com/garconde/trabajo-grado-2025)
+
 ---
 
 ## 🚀 Tecnologías utilizadas
